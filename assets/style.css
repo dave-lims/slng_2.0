@@ -1,0 +1,17 @@
+/*-- css files for individual components --*/
+@import url("./css/nav.css");
+/*-----------------------------------------*/
+
+:root {
+  --background-primary: #1e1e1e;
+
+  --text-primary: #dfdfdf;
+  --text-secondary: #999999;
+
+  --chat-bubble-user: #1787ff;
+  --chat-bubble-slng: #3a3a3c;
+}
+
+body {
+  background-color: var(--background-primary);
+}
