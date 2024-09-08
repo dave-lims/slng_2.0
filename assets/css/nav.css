@@ -1,13 +1,26 @@
 .site-nav {
-  background-color: var(--textbox-slng);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-inline: auto;
+  top: 50%;
+  width: 50%;
+  min-height: 3em;
+
+  border-radius: 20px;
+
+  background-color: var(--chat-bubble-slng);
 }
 
 .site-nav__logo {
-  
+  height: 2em;
 }
 
 .site-nav__list {
-  
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
 }
 
 .site-nav-item {
