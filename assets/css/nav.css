@@ -1,16 +1,21 @@
+/* css file for the nav bar  */
+
 .site-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   margin-inline: auto;
-  top: 50%;
   width: 50%;
-  min-height: 3em;
+  min-height: 4em;
 
-  border-radius: 20px;
+  border-radius: 24px;
 
-  background-color: var(--chat-bubble-slng);
+  background-color: var(--background-secondary);
+}
+
+.site-nav > * {
+  padding: 0 2em 0 1em;
 }
 
 .site-nav__logo {
@@ -20,7 +25,7 @@
 .site-nav__list {
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  gap: 1svh;
 }
 
 .site-nav-item {
