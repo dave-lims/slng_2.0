@@ -3,6 +3,11 @@
 @import url("components/chat.css");
 /*------------------------------------------------*/
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  /* border: 1px solid white; */
+}
+
 :root {
   --background-primary: #0f0f0f;
   --background-secondary: #1e1e1e;
@@ -14,19 +19,14 @@
   --chat-bubble-slng: #3a3a3c;
 }
 
-body, header, main, footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
+/*------------------- Main App -------------------*/
 body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   margin: 0;
   padding: 0;
-  gap: 2rem;
-  height: 100svh;
 
   font-family: "Inter", sans-serif;
   color: var(--text-primary);
@@ -34,17 +34,23 @@ body {
   background-color: var(--background-primary);
 }
 
-header {
-  /* min-height: 15svh; */
+.app, main, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  gap: 2rem;
+  height: 100svh;
+  padding-right: 5rem;
 }
 
 main {
   /* min-height: 80svh; */
+  width: 100%;
   gap: 2rem;
-}
-
-footer {
-  /* min-height: 5svh; */
 }
 
 .footer__credits {
@@ -52,6 +58,12 @@ footer {
   color: var(--text-secondary);
 }
 
+/*---------- Reset default tag styling -----------*/
 ul {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

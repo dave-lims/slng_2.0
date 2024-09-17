@@ -1,37 +1,53 @@
 /* css file for the main chat function, including the chat list, chat box, and chat bubbles */
 
 .chat-list, .chat-box{
-  width: 50%;
   border-radius: 24px;
-  background-color: var(--background-secondary);
 }
 
 .chat-list {
-  min-height: 10svh;
+  width: min(85svw, 750px);
+  min-height: 80svh;
+
+  border: 2px solid var(--background-secondary);
+  opacity: 0.5;
+}
+
+.chat-list:hover {
+  opacity: 1;
+  transition: 0.2s ease-in-out;
 }
 
 .chat-box {
   display: flex;
-  flex-directioN: column-reverse;
   align-items: center;
-  position: sticky;
-  min-height: 3.5em;
+  width: min(85svw, 750px);
+  /* min-height: 3.5em; */
+
+  background-color: var(--background-secondary);
 }
 
 #chat-box__input {
-  /* all: unset; */
-  margin-inline: 2em;
-  width: 87.5%;
-  max-width: 87.5%;
-  min-height: 2em;
-
-  box-sizing: border-box;
+  /* Reset style */
+  background-color: transparent;
+  border: none;
+  outline: none;
   resize: none;
   overflow: hidden;
 
+  font: inherit;
   color: var(--text-primary);
+  /* ----------- */
+
+  margin: 1em 1em 1em 2em;
+  width: 87.5%;
+  height: 1.5em;
 }
 
 .chat-box__submit {
+  background-color: transparent;
+  border: none;
+}
 
+.fa-regular {
+  color: var(--text-primary);
 }
