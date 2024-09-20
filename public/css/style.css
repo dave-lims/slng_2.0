@@ -58,6 +58,7 @@ main {
   color: var(--text-secondary);
 }
 
+
 /*---------- Reset default tag styling -----------*/
 ul {
   list-style-type: none;

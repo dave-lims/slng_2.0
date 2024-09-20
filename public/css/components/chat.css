@@ -1,6 +1,6 @@
 /* css file for the main chat function, including the chat list, chat box, and chat bubbles */
 
-.chat-list, .chat-box{
+.chat-list, #chat-box{
   border-radius: 24px;
 }
 
@@ -9,15 +9,27 @@
   min-height: 80svh;
 
   border: 2px solid var(--background-secondary);
-  opacity: 0.5;
+  opacity: 0;
+  transition: 0.2s ease-out;
 }
 
 .chat-list:hover {
   opacity: 1;
-  transition: 0.2s ease-in-out;
 }
 
-.chat-box {
+.chat-list__bubble {
+
+}
+
+.user {
+
+}
+
+.bot {
+
+}
+
+#chat-box {
   display: flex;
   align-items: center;
   width: min(85svw, 750px);
@@ -43,11 +55,17 @@
   height: 1.5em;
 }
 
-.chat-box__submit {
+#chat-box__submit {
+  /* Reset button style */
   background-color: transparent;
   border: none;
+  /*--------------------*/
+
+  color: var(--text-primary);
+  transition: 0.3s ease-in-out;
 }
 
-.fa-regular {
-  color: var(--text-primary);
+#chat-box__submit:hover {
+  transform: scale(1.5);
+  cursor: pointer;
 }

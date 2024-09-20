@@ -1,14 +1,33 @@
-const chatInput = document.getElementById('chat-box__input');
+const chatList = document.querySelector(".chat-list");
 
-chatInput.addEventListener('input', function() {
-  chatInput.style.height = '1.5em'; // Reset height if there is no scroll bar (a.k.a one line of text)
-  chatInput.style.height = `${chatInput.scrollHeight}px`; // Set height based on scroll height
+const chatForm = document.getElementById("chat-box");
+const chatInput = document.getElementById("chat-box__input");
+
+chatInput.addEventListener("input", adjustChatHeight);
+
+chatInput.addEventListener("keypress", e => {
+  if (e.key == "Enter" && ! e.shiftKey) {
+    e.preventDefault();
+    chatForm.dispatchEvent(new Event("submit"));
+    adjustChatHeight();
+  }
 })
 
-// setInterval(() => {
-//   const chatBox = document.querySelector('.chat-box');
-//   // console.log(chatBox.offsetWidth);
-//   // console.log(chatBox.getBoundingClientRect().width);
+chatForm.addEventListener("submit", e => {
+  e.preventDefault();
+  appendMessage(chatInput.value); // TODO: now do something with this
+  chatInput.value = "";
+})
 
-//   console.log(window.getComputedStyle(chatBox, null).getPropertyValue("width"));
-// }, 2000)
+
+// HELPER METHODS
+function adjustChatHeight() {
+  chatInput.style.height = "1.5em"; // Reset height if there is no scroll bar (a.k.a one line of text)
+  chatInput.style.height = `${chatInput.scrollHeight}px`; // Set height based on scroll height
+}
+
+function appendMessage(text) {
+  const msgBubble = document.createElement("div");
+  msgBubble.classList.add("chat-list__bubble user");
+  console.log(msgBubble);
+}
