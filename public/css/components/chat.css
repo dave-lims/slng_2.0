@@ -1,39 +1,45 @@
 /* css file for the main chat function, including the chat list, chat box, and chat bubbles */
 
-.chat-list, #chat-box{
+.chat-list, #chat-box, .chat-list__bubble {
   border-radius: 24px;
 }
 
 .chat-list {
+  overflow-y: scroll;
   width: min(85svw, 750px);
-  min-height: 80svh;
-
-  border: 2px solid var(--background-secondary);
-  opacity: 0;
+  height: 80svh;
+  padding: 1rem 0.5rem;
+  
+  border: 2px solid var(--background-primary);
   transition: 0.2s ease-out;
+  scrollbar-color: var(--chat-bubble-bot) var(--background-primary);
 }
 
 .chat-list:hover {
-  opacity: 1;
+  border: 2px solid var(--background-secondary);
 }
 
 .chat-list__bubble {
-
+  white-space: pre-wrap;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  width: fit-content;
 }
 
-.user {
-
+.userBubble {
+  float: right;
+  clear: both;
+  background-color: var(--chat-bubble-user);
 }
 
-.bot {
-
+.botBubble {
+  background-color: var(--chat-bubble-bot);
 }
 
 #chat-box {
   display: flex;
   align-items: center;
   width: min(85svw, 750px);
-  /* min-height: 3.5em; */
 
   background-color: var(--background-secondary);
 }
