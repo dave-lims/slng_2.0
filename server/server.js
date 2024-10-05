@@ -1,3 +1,7 @@
+/* TODO: Change require() for import/export */
+/* TODO: learn about express, axios, cors */
+/* TODO: learn about nodemon / install? */
+
 const express = require('express');
 const path = require('path');
 const app = express();

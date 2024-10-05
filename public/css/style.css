@@ -1,10 +1,12 @@
 /*-- css file imports for individual components --*/
-@import url("components/nav.css");
+@import url("components/sidebar.css");
 @import url("components/chat.css");
 /*------------------------------------------------*/
 
 *, *::before, *::after {
   box-sizing: border-box;
+
+  /* for debugging */
   /* border: 1px solid white; */
 }
 
@@ -19,11 +21,27 @@
   --chat-bubble-bot: #3a3a3c;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /*------------------- Main App -------------------*/
 body {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 
   margin: 0;
   padding: 0;
@@ -34,37 +52,20 @@ body {
   background-color: var(--background-primary);
 }
 
-.app, main, footer {
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.app {
-  gap: 2rem;
-  height: 100svh;
-  padding-right: 5rem;
-}
-
-main {
-  /* min-height: 80svh; */
   width: 100%;
-  gap: 2rem;
+  height: 100svh;
 }
 
-.footer__credits {
+.credits {
+  /* TODO: I feel like there's a better way of setting margins / overriding gap */
+  margin-top: -1.5em;
+  margin-bottom: -3em;
   font-size: 0.7rem;
   color: var(--text-secondary);
-}
-
-
-/*---------- Reset default tag styling -----------*/
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }

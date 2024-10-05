@@ -16,33 +16,64 @@
   </head>
 
   <body>
-    <aside class="nav">
-      <a href="./"><img class="nav__logo" src="./img/logo.png" alt="SLNG"></a>
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#">Saved</a>
-        </li>
-        <li class="nav__item">
-          <a href="#">Settings</a>
-        </li>
-      </ul>
-    </aside>
+    <nav class="sidebar">
+      <div class="sidebar__header">
+        <a href="./"><img class="sidebar__logo" src="./img/logo.png" alt="SLNG"></a>
+        <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button>
+      </div>
+      
+      <div class="sidebar__nav__item">
+        Welcome <br>
+        David Lim
+      </div>
 
-    <div class="app">
-      <main>
-        <section class="chat-list">
-          <div class="chat-list__bubble">hello</div>
-        </section>
+      <ul class="sidebar__nav">
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__chat">
+            <div class="icon-box">
+              <i class="fa-regular fa-message"></i>
+            </div>
+            Chat
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__saved">
+            <div class="icon-box">
+              <i class="fa-regular fa-bookmark"></i>
+            </div>
+            Saved
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__history">
+            <div class="icon-box">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            History
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__settings">
+            <div class="icon-box">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            Settings
+          </li>
+        </a>
+      </ul>
+    </nav>
+    
+    <main>
+      <section class="chat">
+        <div class="chat-list"></div>
         <form id="chat-box" name="chat-box">
           <textarea id="chat-box__input" type="text" placeholder="Message SLNG"></textarea>
-          <button id="chat-box__submit" type="submit"><i class="fa-regular fa-hand-point-up fa-xl"></i></button>
+          <button disabled id="chat-box__submit" type="submit"><i class="fa-regular fa-paper-plane fa-xl"></i></i></button>
         </form>
-      </main>
-    
-      <footer>
-        <aside class="footer__credits">SLNG 2.0 made by David Lim. Credits to the rest of CS 160 Team 102-7 @ UC Berkeley 2024 as well for the original version.</aside>
-      </footer>
-    </div>
-    <script src="js/app.js"></script>
+        <aside class="credits">SLNG 2.0 made by David Lim. Credits to the rest of CS 160 Team 102-7 @ UC Berkeley 2024 as well for the original version.</aside>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
   </body>
 </html>
