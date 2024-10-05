@@ -38,6 +38,10 @@ button {
   cursor: pointer;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 /*------------------- Main App -------------------*/
 body {
   display: flex;

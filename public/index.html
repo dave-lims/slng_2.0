@@ -22,9 +22,12 @@
         <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button>
       </div>
       
-      <div class="sidebar__nav__item">
-        Welcome <br>
-        David Lim
+      <div class="sidebar__account">
+        <i class="fa-solid fa-user fa-2xl"></i>
+        <div>
+          Welcome <br>
+          David Lim
+        </div>
       </div>
 
       <ul class="sidebar__nav">
@@ -67,6 +70,7 @@
       <section class="chat">
         <div class="chat-list"></div>
         <form id="chat-box" name="chat-box">
+          <label class="img_input fa-regular fa-image fa-xl" for="chat-box__img"><input type="file" accept="image/png, image/jpeg" id="chat-box__img"></input></label>
           <textarea id="chat-box__input" type="text" placeholder="Message SLNG"></textarea>
           <button disabled id="chat-box__submit" type="submit"><i class="fa-regular fa-paper-plane fa-xl"></i></i></button>
         </form>
@@ -74,6 +78,6 @@
       </section>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="../dist/bundle.js"></script>
   </body>
 </html>
