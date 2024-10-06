@@ -49,6 +49,16 @@ module.exports = {
           },
         }),
     ],
+    devServer: {
+        static: {
+          directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+        hot: true, // Enable hot module replacement
+        liveReload: true, // Enable live reloading
+        watchFiles: ['public/**/*.css', 'public/**/*.html'], // Ensure CSS changes are watched ------ TODO: maybe this is not working
+    },
 }
 
 // module.exports = {

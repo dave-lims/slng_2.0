@@ -7,7 +7,11 @@ const chatInput = document.getElementById("chat-box__input");
 const chatSubmitBtn = document.getElementById("chat-box__submit");
 
 const imgSubmit = document.getElementById("chat-box__img");
-console.log(imgSubmit);
+
+imgSubmit.addEventListener("input", e => {
+  readImg(e.target.files[0]);
+})
+
 
 chatInput.addEventListener("input", adjustChatHeight);
 

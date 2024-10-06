@@ -2076,7 +2076,11 @@ const chatInput = document.getElementById("chat-box__input");
 const chatSubmitBtn = document.getElementById("chat-box__submit");
 
 const imgSubmit = document.getElementById("chat-box__img");
-console.log(imgSubmit);
+
+imgSubmit.addEventListener("input", e => {
+  (0,_js_image_submit_js__WEBPACK_IMPORTED_MODULE_0__["default"])(e.target.files[0]);
+})
+
 
 chatInput.addEventListener("input", adjustChatHeight);
 
@@ -2145,4 +2149,4 @@ function appendMessage(text, bot=false) {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.c8c8c2c3.js.map
+//# sourceMappingURL=index.1a42eee8.js.map

@@ -62,7 +62,7 @@
 }
 
 .img_input:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 #chat-box__input {
@@ -93,7 +93,7 @@
 }
 
 #chat-box__submit:enabled:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 #chat-box__submit:disabled {

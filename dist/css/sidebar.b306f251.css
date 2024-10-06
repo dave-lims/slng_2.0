@@ -13,7 +13,7 @@
   background: var(--background-secondary);
   background: linear-gradient(180deg, var(--background-secondary) 70%, #242424 100%);
   border: 1px solid #2a2a2a;
-  border-radius: 15px;
+  border-radius: 20px;
   transition: 0.2s ease-out;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .sidebar__display:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 .sidebar__account {
@@ -100,4 +100,4 @@
   background-color: #242424;
   border: 1px solid #333333;
 }
-/*# sourceMappingURL=sidebar.7f8f804c.css.map*/
+/*# sourceMappingURL=sidebar.b306f251.css.map*/
