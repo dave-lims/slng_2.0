@@ -1,0 +1,25 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25%;
+  align-items: center;
+  /* border: 1px white solid; */
+}
+
+.welcome * {
+  border: 1px solid white;
+}
+
+.welcome h1 {
+  margin: 0;
+  margin-bottom: 0.5em;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.welcome__subtitle {
+  padding: 1em 10em;
+  border: 1px solid #454545;  /* yet again, TODO: color variables */
+  border-radius: 15px;
+  color: var(--text-secondary);
+}
