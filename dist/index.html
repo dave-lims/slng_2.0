@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SLNG 2.0</title>
+    <link rel="stylesheet" href="css/style.bdf62d35.css">
+    <script src="https://kit.fontawesome.com/195fec1869.js" crossorigin="anonymous"></script>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- To fix chrome dev tool responsive preview -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  </head>
+
+  <body>
+    <nav class="sidebar">
+      <div class="sidebar__header">
+        <a href="./"><img class="sidebar__logo" src="assets/img/logo.72d234c3.png" alt="SLNG"></a>
+        <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button>
+      </div>
+      
+      <div class="sidebar__account">
+        <i class="fa-solid fa-user fa-2xl"></i>
+        <div>
+          Welcome <br>
+          David Lim
+        </div>
+      </div>
+
+      <ul class="sidebar__nav">
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__chat">
+            <div class="icon-box">
+              <i class="fa-regular fa-message"></i>
+            </div>
+            Chat
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__saved">
+            <div class="icon-box">
+              <i class="fa-regular fa-bookmark"></i>
+            </div>
+            Saved
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__history">
+            <div class="icon-box">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            History
+          </li>
+        </a>
+        <a href="#">
+          <li class="sidebar__nav__item sidebar__nav__settings">
+            <div class="icon-box">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            Settings
+          </li>
+        </a>
+      </ul>
+    </nav>
+    
+    <main>
+      <section class="chat">
+        <div class="chat-list"></div>
+        <form id="chat-box" name="chat-box">
+          <label class="img_input fa-regular fa-image fa-xl" for="chat-box__img"><input type="file" accept="image/png, image/jpeg" id="chat-box__img"></input></label>
+          <textarea id="chat-box__input" type="text" placeholder="Message SLNG"></textarea>
+          <button disabled id="chat-box__submit" type="submit"><i class="fa-regular fa-paper-plane fa-xl"></i></i></button>
+        </form>
+        <aside class="credits">SLNG 2.0 made by David Lim. Credits to the rest of CS 160 Team 102-7 @ UC Berkeley 2024 as well for the original version.</aside>
+      </section>
+    </main>
+
+    <script type="module" src="js/index.c8c8c2c3.js"></script>
+  </body>
+</html>
