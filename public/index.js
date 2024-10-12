@@ -13,7 +13,7 @@ imgSubmit.addEventListener("input", e => {
   readImg(e.target.files[0]);
 })
 
-
+// Adjust chat height based on input length
 chatInput.addEventListener("input", adjustChatHeight);
 
 // Disable submit button if there's no input in the textarea
@@ -50,7 +50,7 @@ chatForm.addEventListener("submit", e => {
     top: chatList.scrollHeight,
     behavior: "smooth",
   });
-  chatList.style.clear = "both";
+  
   chatInput.value = "";
   chatSubmitBtn.disabled = true;
 
