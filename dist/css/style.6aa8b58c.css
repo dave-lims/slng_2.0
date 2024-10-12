@@ -1,4 +1,6 @@
-@import url(sidebar.b306f251.css);@import url(chat.edf388a2.css);/*-- css file imports for individual components --*/
+/*-- css file imports for individual components --*/
+/* @import url("components/sidebar.css");
+@import url("components/chat.css"); */
 /*------------------------------------------------*/
 
 *, *::before, *::after {
@@ -17,6 +19,16 @@
 
   --chat-bubble-user: #1787ff;
   --chat-bubble-bot: #3a3a3c;
+
+  color: var(--text-primary);
+}
+
+hr {
+  width: 100%;
+  border: 0.25px solid white;
+  background-color: none;
+  opacity: 0.03;
+  margin: 0 auto;
 }
 
 ul {
@@ -26,6 +38,7 @@ ul {
 }
 
 a {
+  display: flex;
   text-decoration: none;
   color: inherit;
 }
@@ -48,6 +61,8 @@ body {
   margin: 0;
   padding: 0;
 
+  height: 100svh;
+
   font-family: "Inter", sans-serif;
   color: var(--text-primary);
 
@@ -61,7 +76,6 @@ main {
   align-items: center;
 
   width: 100%;
-  height: 100svh;
 }
 
 .credits {
@@ -71,4 +85,4 @@ main {
   font-size: 0.7rem;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=style.bdf62d35.css.map*/
+/*# sourceMappingURL=style.6aa8b58c.css.map*/
