@@ -1,0 +1,54 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 30%;
+
+  color: var(--text-primary);
+}
+
+.welcome__suggestions-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+  gap: 2em;
+}
+
+.welcome h1 {
+  margin: 0;
+  margin-bottom: 0.4em;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.welcome__subtitle {
+  padding: 0.875em 8.5em;
+  border: 1px solid #454545;  /* yet again, TODO: color variables */
+  border-radius: 15px;
+  color: var(--text-secondary);
+}
+
+.welcome__suggestion {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  
+  color: var(--text-primary);
+}
+
+.welcome__suggestion__description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.welcome__suggestion__description h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.welcome__suggestion__description p {
+  margin: 0;
+  color: var(--text-secondary);
+}

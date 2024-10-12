@@ -14,6 +14,16 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+      compress: true,
+      port: 9000,
+      hot: true, // Enable hot module replacement
+      liveReload: true, // Enable live reloading
+      watchFiles: ['dist/**/*.css', 'dist/**/*.html'], // Ensure CSS changes are watched ------ TODO: maybe this is not working
+  },
     module: {
         rules: [
             // Note: enable processing of HTML files from entry
@@ -49,16 +59,7 @@ module.exports = {
           },
         }),
     ],
-    devServer: {
-        static: {
-          directory: path.join(__dirname, 'public'),
-        },
-        compress: true,
-        port: 9000,
-        hot: true, // Enable hot module replacement
-        liveReload: true, // Enable live reloading
-        watchFiles: ['public/**/*.css', 'public/**/*.html'], // Ensure CSS changes are watched ------ TODO: maybe this is not working
-    },
+    
 }
 
 // module.exports = {

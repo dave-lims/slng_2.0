@@ -5,14 +5,15 @@ const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-box__input");
 const chatSubmitBtn = document.getElementById("chat-box__submit");
-
 const imgSubmit = document.getElementById("chat-box__img");
+
+let welcome = true; // variable used to hide welcome message once the user has input a text
 
 imgSubmit.addEventListener("input", e => {
   readImg(e.target.files[0]);
 })
 
-
+// Adjust chat height based on input length
 chatInput.addEventListener("input", adjustChatHeight);
 
 // Disable submit button if there's no input in the textarea
@@ -49,9 +50,15 @@ chatForm.addEventListener("submit", e => {
     top: chatList.scrollHeight,
     behavior: "smooth",
   });
-  chatList.style.clear = "both";
+  
   chatInput.value = "";
   chatSubmitBtn.disabled = true;
+
+  if (welcome) {  // so this runs only once
+    document.querySelector(".welcome").style.display = "none";
+    welcome = false;
+    console.log('hello');
+  }
 })
 
 /*------ HELPER METHODS -------*/

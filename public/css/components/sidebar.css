@@ -1,19 +1,17 @@
-/* css file for the nav bar  */
+/* css file for the sidebar  */
 
 .sidebar {
   display: flex;
   flex-direction: column;
 
   margin: 2svh 1svw;
-  width: min(325px, 40svw);
-
-  /* width: min(450px, 10svh); */
+  width: min(350px, 30svw);
 
   /* TODO: CONVERT THESE TO VARIABLES */
   background: var(--background-secondary);
   background: linear-gradient(180deg, var(--background-secondary) 70%, #242424 100%);
   border: 1px solid #2a2a2a;
-  border-radius: 20px;
+  border-radius: 24px;
   transition: 0.2s ease-out;
 }
 
@@ -26,15 +24,24 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: 0.75em 1.25em;
-
-  /* border: 1px solid white; */
+  margin: 1em 1.25em;
 }
 
 .sidebar__logo {
-  width: 3rem;
-  padding-top: 0.4em;
-  cursor: pointer;
+  width: 3.25rem;
+  transition: 0.5s ease-out;
+}
+
+.sidebar__logo:hover {
+  animation: shake 1s;
+  transform: scale(1.2);
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1.2) rotate(0deg); }
 }
 
 .sidebar__display {
@@ -51,9 +58,8 @@
   align-items: center;
   gap: 1.25em;
 
-  margin: 0.50em;
-  margin-top: 0;
-  padding: 1.5em 0;
+  margin: 0.5em;
+  padding: 1em 0;
 
   border: 1px solid transparent;
   border-radius: 13px;
@@ -64,11 +70,28 @@
   margin-left: 0.5em;
 }
 
+.sidebar__account__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  color: var(--text-primary);
+}
+
+.sidebar__account__text h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.sidebar__account__text p {
+  margin: 0;
+  font-size: 0.75rem;
+}
 
 .sidebar__nav {
   display: flex;
   flex-direction: column;
-  padding-inline: 0.50em;
+  margin: 0.75em 0.5em;
   gap: 0.2em;
 }
 
@@ -82,6 +105,7 @@
 
   border-radius: 13px;
   border: 1px solid transparent;
+  color: var(--text-primary);
 
   transition: 0.15s ease-out;
 }
