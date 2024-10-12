@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <title>SLNG 2.0</title>
-    <link rel="stylesheet" href="css/style.bdf62d35.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.6aa8b58c.css">
+    <link rel="stylesheet" href="css/chat.ce191800.css">
+    <link rel="stylesheet" href="css/sidebar.f2238a26.css">
+    <link rel="stylesheet" href="css/welcome.56de3e7d.css">
+
     <script src="https://kit.fontawesome.com/195fec1869.js" crossorigin="anonymous"></script>
 
     <!-- Font: Inter -->
@@ -10,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <!-- To fix chrome dev tool responsive preview -->
+    <!-- Fixing chrome dev tool responsive preview -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   </head>
 
@@ -20,14 +26,18 @@
         <a href="./"><img class="sidebar__logo" src="assets/img/logo.72d234c3.png" alt="SLNG"></a>
         <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button>
       </div>
+
+      <hr>
       
       <div class="sidebar__account">
         <i class="fa-solid fa-user fa-2xl"></i>
-        <div>
-          David Lim <br>
-          Your Account
+        <div class="sidebar__account__text">
+          <h2>David Lim</h2>
+          <p>Your Account</p>
         </div>
       </div>
+
+      <hr>
 
       <ul class="sidebar__nav">
         <a href="#">
@@ -67,7 +77,30 @@
     
     <main>
       <section class="chat">
-        <div class="chat-list"></div>
+        <div class="chat-list">
+          <div class="welcome">
+            <h1>Welcome to SLNG</h1>
+            <div class="welcome__subtitle">
+              Helping you bridge the gap
+            </div>
+            <div class="welcome__suggestions-box">
+              <div class="welcome__suggestion">
+                <i class="fa-regular fa-comments fa-2xl"></i>
+                <div class="welcome__suggestion__description">
+                  <h3>Ask Questions</h3>
+                  <p>What does it mean when someone says 'it's giving'?</p>
+                </div>
+              </div>
+              <div class="welcome__suggestion">
+                <i class="fa-regular fa-image fa-2xl"></i>
+                <div class="welcome__suggestion__description">
+                  <h3>Take a Screenshot</h3>
+                  <p>Upload a picture of your conversation for review</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <form id="chat-box" name="chat-box">
           <label class="img_input fa-regular fa-image fa-xl" for="chat-box__img"><input type="file" accept="image/png, image/jpeg" id="chat-box__img"></input></label>
           <textarea id="chat-box__input" type="text" placeholder="Message SLNG"></textarea>
@@ -77,6 +110,6 @@
       </section>
     </main>
 
-    <script type="module" src="js/index.1a42eee8.js"></script>
+    <script type="module" src="js/index.ce874cd8.js"></script>
   </body>
 </html>

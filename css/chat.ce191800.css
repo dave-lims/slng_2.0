@@ -7,7 +7,7 @@
   align-items: center;
 
   width: min(900px, 100%);
-  height: 100svh;
+  margin-top: -1.5em;
   gap: 2rem;
 }
 
@@ -18,8 +18,10 @@
 .chat-list {
   overflow-y: scroll;
   width: 100%;
-  height: 80svh;
+  height: 85svh;
   padding: 1rem 0.5rem;
+
+  clear: both;
   
   border: 2px solid var(--background-primary);
   transition: 0.2s ease-out;
@@ -100,4 +102,4 @@
   opacity: 0.5;
   cursor: auto;
 }
-/*# sourceMappingURL=chat.edf388a2.css.map*/
+/*# sourceMappingURL=chat.ce191800.css.map*/
