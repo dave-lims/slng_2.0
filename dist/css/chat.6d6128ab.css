@@ -28,10 +28,6 @@
   scrollbar-color: var(--chat-bubble-bot) var(--background-primary);
 }
 
-/* .chat-list:hover {
-  border: 2px solid var(--background-secondary);
-} */
-
 .chat-list__bubble {
   white-space: pre-wrap;
   padding: 0.5em 1em;
@@ -102,4 +98,4 @@
   opacity: 0.5;
   cursor: auto;
 }
-/*# sourceMappingURL=chat.5a5c265e.css.map*/
+/*# sourceMappingURL=chat.6d6128ab.css.map*/
