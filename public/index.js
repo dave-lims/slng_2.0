@@ -45,20 +45,19 @@ chatInput.addEventListener("keypress", e => {
  **/
 chatForm.addEventListener("submit", e => {
   e.preventDefault(); // prevent default for submit
+  if (welcome) {  // so this runs only once
+    document.querySelector(".welcome").style.display = "none";
+    // document.querySelector(".welcome").style.opacity = "0";
+    welcome = false;
+  }
+  
   appendMessage(chatInput.value);
   chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
   });
-  
   chatInput.value = "";
   chatSubmitBtn.disabled = true;
-
-  if (welcome) {  // so this runs only once
-    document.querySelector(".welcome").style.display = "none";
-    welcome = false;
-    console.log('hello');
-  }
 })
 
 /*------ HELPER METHODS -------*/
