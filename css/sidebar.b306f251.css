@@ -1,0 +1,103 @@
+/* css file for the nav bar  */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  margin: 2svh 1svw;
+  width: min(325px, 40svw);
+
+  /* width: min(450px, 10svh); */
+
+  /* TODO: CONVERT THESE TO VARIABLES */
+  background: var(--background-secondary);
+  background: linear-gradient(180deg, var(--background-secondary) 70%, #242424 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  transition: 0.2s ease-out;
+}
+
+.sidebar:hover {
+  filter: brightness(1.08);
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0.75em 1.25em;
+
+  /* border: 1px solid white; */
+}
+
+.sidebar__logo {
+  width: 3rem;
+  padding-top: 0.4em;
+  cursor: pointer;
+}
+
+.sidebar__display {
+  color: var(--text-primary);
+  transition: 0.2s ease-out;
+}
+
+.sidebar__display:hover {
+  transform: scale(1.2);
+}
+
+.sidebar__account {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+
+  margin: 0.50em;
+  margin-top: 0;
+  padding: 1.5em 0;
+
+  border: 1px solid transparent;
+  border-radius: 13px;
+  transition: 0.15s ease-out;
+}
+
+.sidebar__account i {
+  margin-left: 0.5em;
+}
+
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 0.50em;
+  gap: 0.2em;
+}
+
+.sidebar__nav__item {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 0.8em 0.8em;
+  gap: 1.25em;
+
+  border-radius: 13px;
+  border: 1px solid transparent;
+
+  transition: 0.15s ease-out;
+}
+
+.icon-box {
+  width: 1.5em;
+  text-align: center;
+  /* border: 1px solid white; */
+}
+
+.sidebar__nav a:first-child li {
+  background-color: #161616;
+}
+
+.sidebar__nav__item:hover, .sidebar__account:hover {
+  background-color: #242424;
+  border: 1px solid #333333;
+}
+/*# sourceMappingURL=sidebar.b306f251.css.map*/
