@@ -6,6 +6,9 @@
   margin-top: 30%;
 
   color: var(--text-primary);
+  /* TODO: Animate welcome message */
+  /* transition: all 0.2s ease-out; */
+  /* transition-behavior: allow-discrete; */
 }
 
 .welcome__suggestions-box {
@@ -45,6 +48,7 @@
 
 .welcome__suggestion__description h3 {
   margin: 0;
+  font-size: 1.1em;
   font-weight: 400;
 }
 
@@ -52,4 +56,4 @@
   margin: 0;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=welcome.56de3e7d.css.map*/
+/*# sourceMappingURL=welcome.a163b209.css.map*/
