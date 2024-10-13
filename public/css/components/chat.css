@@ -57,14 +57,16 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding-inline: 1.5em;
+  padding-inline: 1.25em;
 
   background-color: var(--background-secondary);
 }
 
 .img_input {
   cursor: pointer;
+  font-size: 0.875em;
   transition: 0.3s ease-in-out;
+  margin-right: 0.125em;
 }
 
 .img_input:hover {
