@@ -80,9 +80,9 @@ main {
 
 .credits {
   /* TODO: I feel like there's a better way of setting margins / overriding gap */
-  margin-top: -1.5em;
+  margin-top: -2em;
   margin-bottom: -3em;
   font-size: 0.7rem;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=style.6aa8b58c.css.map*/
+/*# sourceMappingURL=style.d88be02e.css.map*/
