@@ -9,10 +9,6 @@ export default async function readImg(img) {
 
 
 
-
-
-
-
 // const photo = document.getElementById("imageInput");
 //       photo.addEventListener("change", async(event) => {
 //         const image = event.target.files[0];

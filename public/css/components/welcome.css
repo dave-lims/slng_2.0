@@ -29,6 +29,11 @@
   padding: 0.875em 8.5em;
   border: 1px solid #454545;  /* yet again, TODO: color variables */
   border-radius: 15px;
+}
+
+.welcome__subtitle p {
+  margin: 0;
+  width: 100%;
   color: var(--text-secondary);
 }
 

@@ -1,7 +1,7 @@
-// const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
+const webpack = require('webpack');
+require('dotenv').config({ path: './env' }); 
 
 module.exports = {
     mode: "development",
@@ -58,8 +58,17 @@ module.exports = {
             filename: 'css/[name].[contenthash:8].css',
           },
         }),
+
+        // TODO: Currently am not using this, make sure to not forget about this
+        new webpack.DefinePlugin({
+          "process.env": JSON.stringify(process.env),
+        }),
     ],
-    
+    resolve: {
+      alias: {
+        'uri-js': 'fast-uri',
+      },
+    },
 }
 
 // module.exports = {
