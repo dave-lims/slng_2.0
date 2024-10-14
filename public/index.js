@@ -1,4 +1,14 @@
 import readImg from "./js/image-submit.js";
+const images = {
+  cat1: import('./img/cats/1.jpg'),
+  cat2: import('./img/cats/2.jpg'),
+  cat3: import('./img/cats/3.jpg'),
+  cat4: import('./img/cats/4.jpg'),
+  cat5: import('./img/cats/5.jpg'),
+  cat6: import('./img/cats/6.jpg'),
+  cat7: import('./img/cats/7.jpg'),
+};
+const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
@@ -6,13 +16,13 @@ const chatInput = document.getElementById("chat-box__input");
 const chatSubmitBtn = document.getElementById("chat-box__submit");
 const imgSubmit = document.getElementById("chat-box__img");
 
-let welcome = true; // variable used to hide welcome message once the user has input a text
-
-chatInput.focus();  // set cursor to input bar on load
-
 const state = {
+  welcome: true,
+  firstText: true,
   isSubmitting: false,
 };
+
+chatInput.focus();  // set cursor to input bar on load
 
 // Function to update button state
 function updateButtonState() {
@@ -55,22 +65,44 @@ async function inputSubmit(e) {
   state.isSubmitting = true; // Set submitting state
   updateButtonState(); // Update button state
 
-  if (welcome) {  // This runs only once
+  if (state.welcome) {  // This runs only once
     document.querySelector(".welcome").style.display = "none";
     // document.querySelector(".welcome").style.opacity = "0"; // initially added for transition, need to fix once OpenAPI is correctly implemented
-    welcome = false;
+    state.welcome = false;
   }
   
   appendMessage(chatInput.value);
+  chatList.scrollTo({
+    top: chatList.scrollHeight,
+    behavior: "smooth",
+  });
   chatInput.value = "";
-  state.isSubmitting = false;
+  state.isSubmitting = true;
   chatSubmitBtn.classList.add('loading');
   
   // API Mock
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 750));
+  
+  if (state.firstText) {
+    appendMessage('Hi there! 👋  Thank you for using SLNG 💬\n\nSLNG is currently undergoing significant updates to improve its overall performance and user experience. As part of this process, many features and sections of the site are being revamped.\n\n📱 You may notice limited functionality or access during this time, but rest assured, these updates are aimed at delivering a better and more seamless platform.\n\nThank you for your patience and understanding as we work to complete these improvements. 🙇🏻‍♂️', true);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    appendMessage('For now, please enjoy these cat pictures 🐱', true);
+    await new Promise(resolve => setTimeout(resolve, 750));
+    appendImg(getRandomCatPic());
+    state.firstText = false;
+  } else {
+    await new Promise(resolve => setTimeout(resolve, 500));
+    appendMessage(catText[Math.floor(Math.random() * catText.length)], true);
+    chatList.scrollTo({
+      top: chatList.scrollHeight,
+      behavior: "smooth",
+    });
+    await new Promise(resolve => setTimeout(resolve, 250));
+    appendImg(getRandomCatPic());
+  }
+  await new Promise(resolve => setTimeout(resolve, 100));
 
-  await appendMessage('test', true);
-  await chatList.scrollTo({
+  chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
   });
@@ -89,12 +121,13 @@ function adjustChatHeight() {
 
 // Appends a message to the chat list
 // optional parameter [bot]: default is false, if it's true, add styling for the bot bubble
-function appendMessage(text, bot=false) {
+// optional parameter [img]: default is null, accepts <img> element (src & alt should be provided)
+function appendMessage(text, bot=false, img=null) {
   const msgBox = document.createElement("div");
   const msgBubble = document.createElement("div");
 
-  msgBubble.innerHTML = text;
   msgBubble.classList.add("chat-list__bubble");
+  msgBubble.innerHTML = text;
 
   if (! bot) {
     msgBox.classList.add("userBubble-box");
@@ -106,4 +139,26 @@ function appendMessage(text, bot=false) {
 
   msgBox.append(msgBubble);
   chatList.append(msgBox);
+}
+
+function appendImg(img) {
+  if (img) {
+    const catBox = document.createElement("div");
+    catBox.classList.add("botBubble-box")
+    catBox.appendChild(img);
+    chatList.appendChild(catBox);
+  } else {
+    throw new Error("not an iamge!");
+  }
+}
+
+function getRandomCatPic() {
+  const cat = document.createElement('img');
+  cat.alt = 'image of a cute cat';
+  cat.src = `./img/${Math.floor(Math.random() * 7) + 1}.jpg`;
+  cat.style.maxWidth = '30%';
+  cat.style.borderRadius = '24px';
+  cat.style.margin = '0.5em 0em';
+
+  return cat;
 }

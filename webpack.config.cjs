@@ -38,11 +38,12 @@ module.exports = {
                 use: ["css-loader"],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(ico|png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
                     // Note: define output filename of images
-                    filename: 'assets/img/[name].[hash:8][ext]',
+                    // filename: 'img/[name].[hash:8][ext]',
+                    filename: 'img/[name][ext]',
                 },
             },
         ],
@@ -51,7 +52,7 @@ module.exports = {
         new HtmlBundlerPlugin({
           js: {
             // output filename of extracted JS from source script loaded in HTML via `<script>` tag
-            filename: 'js/[name].[contenthash:8].js',
+            filename: '[name].[contenthash:8].js',
           },
           css: {
             // output filename of extracted CSS from source style loaded in HTML via `<link>` tag

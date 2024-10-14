@@ -2024,7 +2024,40 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"tesseract.js","version":"5.1.
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -2037,9 +2070,89 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"tesseract.js","version":"5.1.
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "slng_2.0:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -2053,6 +2166,119 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"tesseract.js","version":"5.1.
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"index": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 		
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkslng_2_0"] = self["webpackChunkslng_2_0"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -2064,6 +2290,16 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_image_submit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/image-submit.js */ "./public/js/image-submit.js");
 
+const images = {
+  cat1: __webpack_require__.e(/*! import() */ "public_img_cats_1_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/1.jpg */ "./public/img/cats/1.jpg", 17)),
+  cat2: __webpack_require__.e(/*! import() */ "public_img_cats_2_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/2.jpg */ "./public/img/cats/2.jpg", 17)),
+  cat3: __webpack_require__.e(/*! import() */ "public_img_cats_3_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/3.jpg */ "./public/img/cats/3.jpg", 17)),
+  cat4: __webpack_require__.e(/*! import() */ "public_img_cats_4_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/4.jpg */ "./public/img/cats/4.jpg", 17)),
+  cat5: __webpack_require__.e(/*! import() */ "public_img_cats_5_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/5.jpg */ "./public/img/cats/5.jpg", 17)),
+  cat6: __webpack_require__.e(/*! import() */ "public_img_cats_6_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/6.jpg */ "./public/img/cats/6.jpg", 17)),
+  cat7: __webpack_require__.e(/*! import() */ "public_img_cats_7_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/7.jpg */ "./public/img/cats/7.jpg", 17)),
+};
+const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
@@ -2071,13 +2307,13 @@ const chatInput = document.getElementById("chat-box__input");
 const chatSubmitBtn = document.getElementById("chat-box__submit");
 const imgSubmit = document.getElementById("chat-box__img");
 
-let welcome = true; // variable used to hide welcome message once the user has input a text
-
-chatInput.focus();  // set cursor to input bar on load
-
 const state = {
+  welcome: true,
+  firstText: true,
   isSubmitting: false,
 };
+
+chatInput.focus();  // set cursor to input bar on load
 
 // Function to update button state
 function updateButtonState() {
@@ -2120,22 +2356,44 @@ async function inputSubmit(e) {
   state.isSubmitting = true; // Set submitting state
   updateButtonState(); // Update button state
 
-  if (welcome) {  // This runs only once
+  if (state.welcome) {  // This runs only once
     document.querySelector(".welcome").style.display = "none";
     // document.querySelector(".welcome").style.opacity = "0"; // initially added for transition, need to fix once OpenAPI is correctly implemented
-    welcome = false;
+    state.welcome = false;
   }
   
   appendMessage(chatInput.value);
+  chatList.scrollTo({
+    top: chatList.scrollHeight,
+    behavior: "smooth",
+  });
   chatInput.value = "";
-  state.isSubmitting = false;
+  state.isSubmitting = true;
   chatSubmitBtn.classList.add('loading');
   
   // API Mock
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 750));
+  
+  if (state.firstText) {
+    appendMessage('Hi there! 👋  Thank you for using SLNG 💬\n\nSLNG is currently undergoing significant updates to improve its overall performance and user experience. As part of this process, many features and sections of the site are being revamped.\n\n📱 You may notice limited functionality or access during this time, but rest assured, these updates are aimed at delivering a better and more seamless platform.\n\nThank you for your patience and understanding as we work to complete these improvements. 🙇🏻‍♂️', true);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    appendMessage('For now, please enjoy these cat pictures 🐱', true);
+    await new Promise(resolve => setTimeout(resolve, 750));
+    appendImg(getRandomCatPic());
+    state.firstText = false;
+  } else {
+    await new Promise(resolve => setTimeout(resolve, 500));
+    appendMessage(catText[Math.floor(Math.random() * catText.length)], true);
+    chatList.scrollTo({
+      top: chatList.scrollHeight,
+      behavior: "smooth",
+    });
+    await new Promise(resolve => setTimeout(resolve, 250));
+    appendImg(getRandomCatPic());
+  }
+  await new Promise(resolve => setTimeout(resolve, 100));
 
-  await appendMessage('test', true);
-  await chatList.scrollTo({
+  chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
   });
@@ -2154,12 +2412,13 @@ function adjustChatHeight() {
 
 // Appends a message to the chat list
 // optional parameter [bot]: default is false, if it's true, add styling for the bot bubble
-function appendMessage(text, bot=false) {
+// optional parameter [img]: default is null, accepts <img> element (src & alt should be provided)
+function appendMessage(text, bot=false, img=null) {
   const msgBox = document.createElement("div");
   const msgBubble = document.createElement("div");
 
-  msgBubble.innerHTML = text;
   msgBubble.classList.add("chat-list__bubble");
+  msgBubble.innerHTML = text;
 
   if (! bot) {
     msgBox.classList.add("userBubble-box");
@@ -2172,8 +2431,30 @@ function appendMessage(text, bot=false) {
   msgBox.append(msgBubble);
   chatList.append(msgBox);
 }
+
+function appendImg(img) {
+  if (img) {
+    const catBox = document.createElement("div");
+    catBox.classList.add("botBubble-box")
+    catBox.appendChild(img);
+    chatList.appendChild(catBox);
+  } else {
+    throw new Error("not an iamge!");
+  }
+}
+
+function getRandomCatPic() {
+  const cat = document.createElement('img');
+  cat.alt = 'image of a cute cat';
+  cat.src = `./img/${Math.floor(Math.random() * 7) + 1}.jpg`;
+  cat.style.maxWidth = '30%';
+  cat.style.borderRadius = '24px';
+  cat.style.margin = '0.5em 0em';
+
+  return cat;
+}
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.faa6c6ab.js.map
+//# sourceMappingURL=index.3a2174cc.js.map

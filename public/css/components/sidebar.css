@@ -5,7 +5,7 @@
   flex-direction: column;
 
   margin: 2svh 1svw;
-  width: min(350px, 30svw);
+  width: min(275px, 30svw);
 
   /* TODO: CONVERT THESE TO VARIABLES */
   background: var(--background-secondary);

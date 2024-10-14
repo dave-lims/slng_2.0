@@ -15,6 +15,7 @@ const PORT = 3000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use('/img', express.static(path.join(__dirname, '/public/img')));
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

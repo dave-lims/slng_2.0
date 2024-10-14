@@ -44,9 +44,15 @@ a {
 }
 
 button {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+  
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-size: inherit;
 }
 
 input[type="file"] {
@@ -65,8 +71,8 @@ body {
 
   font-family: "Inter", sans-serif;
   color: var(--text-primary);
-
   background-color: var(--background-primary);
+  background: linear-gradient(rgb(21, 21, 21) 0%, var(--background-primary) 30%);
 }
 
 main {
@@ -75,7 +81,8 @@ main {
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  width: 70svw;
+  margin-inline: auto;
 }
 
 .credits {

@@ -23,16 +23,22 @@
 
   clear: both;
   
-  border: 2px solid var(--background-primary);
   transition: 0.2s ease-out;
   scrollbar-color: var(--chat-bubble-bot) var(--background-primary);
 }
 
 .chat-list__bubble {
-  white-space: pre-wrap;
-  padding: 0.5em 1em;
-  margin: 0.5em;
+  display: inline-block;
+
+  padding: 0.65em 1em;
+  margin: 0.5em 0em;
+
   width: fit-content;
+  max-width: 70%;
+  
+  line-height: 1.25em;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .userBubble {
