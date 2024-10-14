@@ -2390,9 +2390,11 @@ async function inputSubmit(e) {
     });
     await new Promise(resolve => setTimeout(resolve, 250));
     appendImg(getRandomCatPic());
+    console.log('this should come first');
   }
-  await new Promise(resolve => setTimeout(resolve, 10));
+  await new Promise(resolve => setTimeout(resolve, 100));
 
+  console.log('and this second');
   chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
@@ -2457,4 +2459,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.fefed404.js.map
+//# sourceMappingURL=index.30c7eab4.js.map
