@@ -2301,6 +2301,8 @@ const images = {
 };
 const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
+console.log('add');
+
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-box__input");
@@ -2459,4 +2461,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.30c7eab4.js.map
+//# sourceMappingURL=index.9c892c46.js.map
