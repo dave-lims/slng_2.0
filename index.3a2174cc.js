@@ -2301,8 +2301,6 @@ const images = {
 };
 const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
-console.log('add');
-
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-box__input");
@@ -2392,11 +2390,9 @@ async function inputSubmit(e) {
     });
     await new Promise(resolve => setTimeout(resolve, 250));
     appendImg(getRandomCatPic());
-    console.log('this should come first');
   }
   await new Promise(resolve => setTimeout(resolve, 100));
 
-  console.log('and this second');
   chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
@@ -2461,4 +2457,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.9c892c46.js.map
+//# sourceMappingURL=index.3a2174cc.js.map
