@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 30%;
+  margin-top: 25svh;
 
   color: var(--text-primary);
   /* TODO: Animate welcome message */
@@ -26,15 +26,31 @@
 }
 
 .welcome__subtitle {
-  padding: 0.875em 8.5em;
+  width: min(27.5em, 90%);
   border: 1px solid #454545;  /* yet again, TODO: color variables */
   border-radius: 15px;
+
+  transition: 0.2s ease-in-out;
 }
 
 .welcome__subtitle p {
-  margin: 0;
   width: 100%;
   color: var(--text-secondary);
+  text-align: center;
+  margin: 0.95em 0;
+}
+
+.welcome__subtitle:hover {
+  transform: scale(1.05);
+}
+
+/* .welcome__subtitle.active {
+  animation: click 0.3s;
+} */
+
+@keyframes click {
+  50% { transform: scale(0.975); }
+  100% { transform: scale(1); }
 }
 
 .welcome__suggestion {
@@ -61,4 +77,4 @@
   margin: 0;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=welcome.0f4f7138.css.map*/
+/*# sourceMappingURL=welcome.f2053503.css.map*/

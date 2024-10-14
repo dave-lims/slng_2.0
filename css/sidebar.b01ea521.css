@@ -5,7 +5,7 @@
   flex-direction: column;
 
   margin: 2svh 1svw;
-  width: min(350px, 30svw);
+  width: min(275px, 30svw);
 
   /* TODO: CONVERT THESE TO VARIABLES */
   background: var(--background-secondary);
@@ -124,4 +124,4 @@
   background-color: #242424;
   border: 1px solid #333333;
 }
-/*# sourceMappingURL=sidebar.f2238a26.css.map*/
+/*# sourceMappingURL=sidebar.b01ea521.css.map*/
