@@ -8,6 +8,7 @@ const images = {
   cat6: import('./img/cats/6.jpg'),
   cat7: import('./img/cats/7.jpg'),
 };
+let lastCat = 0;
 const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
@@ -155,7 +156,14 @@ async function appendImg(img) {
 function getRandomCatPic() {
   const cat = document.createElement('img');
   cat.alt = 'image of a cute cat';
-  cat.src = `./img/${Math.floor(Math.random() * 7) + 1}.jpg`;
+
+  let currCat = Math.floor(Math.random() * 7) + 1;
+  while (lastCat == currCat) {
+    currCat = Math.floor(Math.random() * 7) + 1;
+  }
+  lastCat = currCat;
+  
+  cat.src = `./img/${currCat}.jpg`;
   cat.style.maxWidth = '30%';
   cat.style.borderRadius = '24px';
   cat.style.margin = '0.5em 0em';
