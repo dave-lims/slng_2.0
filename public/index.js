@@ -87,21 +87,20 @@ async function inputSubmit(e) {
     appendMessage('Hi there! 👋  Thank you for using SLNG 💬\n\nSLNG is currently undergoing significant updates to improve its overall performance and user experience. As part of this process, many features and sections of the site are being revamped.\n\n📱 You may notice limited functionality or access during this time, but rest assured, these updates are aimed at delivering a better and more seamless platform.\n\nThank you for your patience and understanding as we work to complete these improvements. 🙇🏻‍♂️', true);
     await new Promise(resolve => setTimeout(resolve, 1500));
     appendMessage('For now, please enjoy these cat pictures 🐱', true);
-    await new Promise(resolve => setTimeout(resolve, 750));
-    appendImg(getRandomCatPic());
     state.firstText = false;
   } else {
     await new Promise(resolve => setTimeout(resolve, 500));
-    appendMessage(catText[Math.floor(Math.random() * catText.length)], true);
+    await appendMessage(catText[Math.floor(Math.random() * catText.length)], true);
     chatList.scrollTo({
       top: chatList.scrollHeight,
       behavior: "smooth",
     });
-    await new Promise(resolve => setTimeout(resolve, 250));
-    appendImg(getRandomCatPic());
   }
-  await new Promise(resolve => setTimeout(resolve, 100));
 
+  await new Promise(resolve => setTimeout(resolve, 500));
+  await appendImg(getRandomCatPic());
+
+  await new Promise(resolve => setTimeout(resolve, 200));
   chatList.scrollTo({
     top: chatList.scrollHeight,
     behavior: "smooth",
@@ -111,6 +110,7 @@ async function inputSubmit(e) {
   updateButtonState();
   chatSubmitBtn.classList.remove('loading');
 }
+  
 
 /*------ HELPER METHODS -------*/
 // Adjusts the chat input box height based on the length of the text inside
@@ -141,7 +141,7 @@ function appendMessage(text, bot=false, img=null) {
   chatList.append(msgBox);
 }
 
-function appendImg(img) {
+async function appendImg(img) {
   if (img) {
     const catBox = document.createElement("div");
     catBox.classList.add("botBubble-box")
