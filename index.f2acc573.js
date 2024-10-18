@@ -2299,6 +2299,7 @@ const images = {
   cat6: __webpack_require__.e(/*! import() */ "public_img_cats_6_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/6.jpg */ "./public/img/cats/6.jpg", 17)),
   cat7: __webpack_require__.e(/*! import() */ "public_img_cats_7_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/7.jpg */ "./public/img/cats/7.jpg", 17)),
 };
+let lastCat = 0;
 const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
@@ -2446,7 +2447,14 @@ async function appendImg(img) {
 function getRandomCatPic() {
   const cat = document.createElement('img');
   cat.alt = 'image of a cute cat';
-  cat.src = `./img/${Math.floor(Math.random() * 7) + 1}.jpg`;
+
+  let currCat = Math.floor(Math.random() * 7) + 1;
+  while (lastCat == currCat) {
+    currCat = Math.floor(Math.random() * 7) + 1;
+  }
+  lastCat = currCat;
+  
+  cat.src = `./img/${currCat}.jpg`;
   cat.style.maxWidth = '30%';
   cat.style.borderRadius = '24px';
   cat.style.margin = '0.5em 0em';
@@ -2457,4 +2465,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.3083d620.js.map
+//# sourceMappingURL=index.f2acc573.js.map
