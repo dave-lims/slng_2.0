@@ -24,7 +24,7 @@
   clear: both;
   
   transition: 0.2s ease-out;
-  scrollbar-color: var(--chat-bubble-bot) var(--background-primary);
+  scrollbar-color: var(--chat-bubble-bot) transparent;
 }
 
 .chat-list__bubble {
