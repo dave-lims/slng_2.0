@@ -1,5 +1,39 @@
 /* css file for the sidebar  */
 
+.top-sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 1rem;
+  padding-inline: 1.25em;
+  width: calc(100% - 2rem);
+  min-height: 3.75em;
+  border-radius: 15px;
+
+  background: var(--background-secondary);
+  background: linear-gradient(90deg, var(--background-secondary) 70%, #242424 100%);
+  border: 1px solid #2a2a2a;
+}
+
+.top-sidebar__hamburger {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-right: 66.8594px;  /* TODO: temporary fix to center the logo */
+}
+
+.sidebar__logo {
+  height: 1.75em;
+}
+
+#login-btn {
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  border: 1px solid #404040;
+  border-radius: 35px;
+  color: var(--text-primary);
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -15,6 +49,10 @@
   transition: 0.2s ease-out;
 }
 
+.sidebar {
+  display: none;
+}
+
 .sidebar:hover {
   filter: brightness(1.08);
 }
@@ -27,10 +65,10 @@
   margin: 1em 1.25em;
 }
 
-.sidebar__logo {
+/* .sidebar__logo {
   width: 3.25rem;
   transition: 0.5s ease-out;
-}
+} */
 
 .sidebar__logo:hover {
   animation: shake 1s;
@@ -123,10 +161,6 @@
 .sidebar__nav__item:hover, .sidebar__account:hover {
   background-color: #242424;
   border: 1px solid #333333;
-}
-
-.sidebar {
-  display: none;
 }
 
 @media (min-width: 769px) {

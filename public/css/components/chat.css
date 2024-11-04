@@ -27,6 +27,10 @@
   scrollbar-color: var(--chat-bubble-bot) transparent;
 }
 
+.chat-list {
+  height: 100%;
+}
+
 .chat-list__bubble {
   display: inline-block;
 
