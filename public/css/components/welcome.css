@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 25svh;
+  margin-top: 20svh;
 
   color: var(--text-primary);
   /* TODO: Animate welcome message */
@@ -25,6 +25,13 @@
   font-weight: 500;
 }
 
+.welcome h1 {
+  margin: 0;
+  margin-bottom: 0.4em;
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
 .welcome__subtitle {
   width: min(27.5em, 90%);
   border: 1px solid #454545;  /* yet again, TODO: color variables */
@@ -38,6 +45,8 @@
   color: var(--text-secondary);
   text-align: center;
   margin: 0.95em 0;
+
+  font-size: 0.875rem;
 }
 
 .welcome__subtitle:hover {
@@ -55,25 +64,32 @@
 
 .welcome__suggestion {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5em;
   
   color: var(--text-primary);
 }
 
-.welcome__suggestion__description {
+.welcome__suggestion__title {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5em;
+  gap: 0.75em;
 }
 
-.welcome__suggestion__description h3 {
+.welcome__suggestion__title i {
+  font-size: 1.25rem;
+}
+
+.welcome__suggestion__title h3 {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: 400;
 }
 
-.welcome__suggestion__description p {
+.welcome__suggestion p {
   margin: 0;
+  font-size: 0.875rem;
   color: var(--text-secondary);
 }

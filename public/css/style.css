@@ -68,6 +68,7 @@ body {
   margin: 0;
   padding: 0;
 
+  height: 100svh;
   max-height: 100svh;
 
   font-family: "Inter", sans-serif;
@@ -87,19 +88,17 @@ main {
   justify-content: center;
   align-items: center;
 
-  width: 70svw;
-  margin-inline: auto;
-}
-
-.credits {
-  /* TODO: I feel like there's a better way of setting margins / overriding gap */
-  margin-top: -2em;
-  margin-bottom: -3em;
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-}
-
-.credits {
-  margin: 0;
+  padding: 1rem;
   width: 100%;
+  height: 100svh;
+  max-height: 100svh;
+}
+
+.credits {
+  width: 100%;
+  margin-top: 1em;
+  text-align: center;
+
+  font-size: 0.75rem;
+  color: var(--text-secondary);
 }

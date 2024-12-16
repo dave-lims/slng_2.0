@@ -9,7 +9,7 @@ const images = {
   cat7: import('./img/cats/7.jpg'),
 };
 let lastCat = 0;
-const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
+const catText = ['Aren\'t our cats so cute', 'These are not my cats', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
