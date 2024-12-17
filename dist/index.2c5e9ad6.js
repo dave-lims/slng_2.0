@@ -2300,7 +2300,7 @@ const images = {
   cat7: __webpack_require__.e(/*! import() */ "public_img_cats_7_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/7.jpg */ "./public/img/cats/7.jpg", 17)),
 };
 let lastCat = 0;
-const catText = ['Aren\'t our cats so cute', 'These are not my cats btw (by the way)', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
+const catText = ['Aren\'t our cats so cute', 'These are not my cats', 'Another one!', 'You want another?', 'Here are more cats!', 'Cat cat cat', 'You really do like cats huh', 'If you see the same cat again, we\'re working on expanding our cat database', 'Meow'];
 
 const chatList = document.querySelector(".chat-list");
 const chatForm = document.getElementById("chat-box");
@@ -2465,4 +2465,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.f2acc573.js.map
+//# sourceMappingURL=index.2c5e9ad6.js.map
