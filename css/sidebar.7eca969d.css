@@ -1,5 +1,45 @@
 /* css file for the sidebar  */
 
+.top-sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-inline: 1.25em;
+  width: min(900px, 100%);
+  min-height: 3.75rem;
+  border-radius: 15px;
+
+  background: var(--background-secondary);
+  background: linear-gradient(90deg, var(--background-secondary) 70%, #242424 100%);
+  border: 1px solid #2a2a2a;
+}
+
+.top-sidebar__hamburger {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-right: 66.8594px;  /* TODO: temporary fix to center the logo */
+}
+
+.sidebar__logo {
+  height: 1.75em;
+  transition: 0.5s ease-out;
+}
+
+#login-btn {
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  border: 1px solid #404040;
+  border-radius: 35px;
+  color: var(--text-primary);
+
+  transition: 0.15s;
+}
+
+#login-btn:hover {
+  color: rgba(223, 223, 223, 0.5);
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -15,6 +55,10 @@
   transition: 0.2s ease-out;
 }
 
+.sidebar {
+  display: none;
+}
+
 .sidebar:hover {
   filter: brightness(1.08);
 }
@@ -25,11 +69,6 @@
   align-items: center;
 
   margin: 1em 1.25em;
-}
-
-.sidebar__logo {
-  width: 3.25rem;
-  transition: 0.5s ease-out;
 }
 
 .sidebar__logo:hover {
@@ -124,4 +163,19 @@
   background-color: #242424;
   border: 1px solid #333333;
 }
-/*# sourceMappingURL=sidebar.b01ea521.css.map*/
+
+@media (min-width: 1280px) {
+  .top-sidebar {
+    display: none;
+  }
+
+  .sidebar {
+    display: flex;
+  }
+
+  .sidebar__logo {
+    width: 3.25rem;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=sidebar.7eca969d.css.map*/

@@ -3,9 +3,11 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 25svh;
+  margin-top: 20svh;
 
   color: var(--text-primary);
+  text-align: center;
+
   /* TODO: Animate welcome message */
   /* transition: all 0.2s ease-out; */
   /* transition-behavior: allow-discrete; */
@@ -21,7 +23,7 @@
 .welcome h1 {
   margin: 0;
   margin-bottom: 0.4em;
-  font-size: 2.5rem;
+  font-size: 1.875rem;
   font-weight: 500;
 }
 
@@ -36,45 +38,70 @@
 .welcome__subtitle p {
   width: 100%;
   color: var(--text-secondary);
-  text-align: center;
   margin: 0.95em 0;
+
+  font-size: 0.875rem;
 }
 
 .welcome__subtitle:hover {
   transform: scale(1.05);
 }
 
-/* .welcome__subtitle.active {
-  animation: click 0.3s;
-} */
-
-@keyframes click {
-  50% { transform: scale(0.975); }
-  100% { transform: scale(1); }
-}
-
 .welcome__suggestion {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5em;
   
   color: var(--text-primary);
 }
 
-.welcome__suggestion__description {
+.welcome__suggestion__title {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5em;
+  gap: 0.75em;
 }
 
-.welcome__suggestion__description h3 {
+.welcome__suggestion__title i {
+  font-size: 1.25rem;
+}
+
+.welcome__suggestion__title h3 {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: 400;
 }
 
-.welcome__suggestion__description p {
+.welcome__suggestion p {
   margin: 0;
+  font-size: 0.875rem;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=welcome.f2053503.css.map*/
+
+@media (min-width: 1280px) {
+  .welcome {
+    margin-top: 25svh;
+  }
+  
+  .welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome__subtitle p {
+    font-size: 1rem;
+  }
+
+  .welcome__suggestion__title i {
+    font-size: 1.125rem;
+  }
+
+  .welcome__suggestion__title h3 {
+    font-size: 1.125rem;
+  }
+
+  .welcome__suggestion p {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=welcome.0389f7a9.css.map*/

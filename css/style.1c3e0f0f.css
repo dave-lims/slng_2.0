@@ -52,6 +52,7 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-family: inherit;
   font-size: inherit;
 }
 
@@ -68,6 +69,7 @@ body {
   padding: 0;
 
   height: 100svh;
+  max-height: 100svh;
 
   font-family: "Inter", sans-serif;
   color: var(--text-primary);
@@ -81,15 +83,27 @@ main {
   justify-content: center;
   align-items: center;
 
-  width: 70svw;
+  padding: 1rem;
   margin-inline: auto;
+
+  width: 100%;
+  max-width: 900px;
+  height: 100svh;
+  max-height: 100svh;
 }
 
 .credits {
-  /* TODO: I feel like there's a better way of setting margins / overriding gap */
-  margin-top: -2em;
-  margin-bottom: -3em;
-  font-size: 0.7rem;
+  width: 100%;
+  margin-top: 0.625rem;
+  text-align: center;
+
+  font-size: 0.625rem;
   color: var(--text-secondary);
 }
-/*# sourceMappingURL=style.e0914ca6.css.map*/
+
+@media (min-width: 1280px) {
+  .credits {
+    font-size: 0.75rem;
+  }
+}
+/*# sourceMappingURL=style.1c3e0f0f.css.map*/
