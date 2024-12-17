@@ -7,7 +7,7 @@
   align-items: center;
 
   width: min(900px, 100%);
-  height: calc(100% - 3.75rem);
+  height: calc(100% - 3.75rem); /* accounting for the height of the top side-bar */
 }
 
 #chat-box, .chat-list__bubble {
@@ -131,4 +131,10 @@
   background-image: url('../../img/loading.gif');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 1280px) {
+  .chat {
+    height: 100%;
+  }
 }

@@ -77,11 +77,6 @@ body {
   background: linear-gradient(rgb(21, 21, 21) 0%, var(--background-primary) 30%);
 }
 
-body {
-  flex-direction: column;
-  align-items: center;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -89,16 +84,25 @@ main {
   align-items: center;
 
   padding: 1rem;
+  margin-inline: auto;
+
   width: 100%;
+  max-width: 900px;
   height: 100svh;
   max-height: 100svh;
 }
 
 .credits {
   width: 100%;
-  margin-top: 1em;
+  margin-top: 0.625rem;
   text-align: center;
 
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   color: var(--text-secondary);
+}
+
+@media (min-width: 1280px) {
+  .credits {
+    font-size: 0.75rem;
+  }
 }

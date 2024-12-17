@@ -24,6 +24,7 @@
 
 .sidebar__logo {
   height: 1.75em;
+  transition: 0.5s ease-out;
 }
 
 #login-btn {
@@ -69,11 +70,6 @@
 
   margin: 1em 1.25em;
 }
-
-/* .sidebar__logo {
-  width: 3.25rem;
-  transition: 0.5s ease-out;
-} */
 
 .sidebar__logo:hover {
   animation: shake 1s;
@@ -168,12 +164,17 @@
   border: 1px solid #333333;
 }
 
-/* @media (min-width: 1280px) {
+@media (min-width: 1280px) {
+  .top-sidebar {
+    display: none;
+  }
+
   .sidebar {
     display: flex;
   }
 
-  .top-sidebar {
-    display: none;
+  .sidebar__logo {
+    width: 3.25rem;
+    height: auto;
   }
-} */
+}
