@@ -28,7 +28,7 @@
 .chat-list__bubble {
   display: inline-block;
 
-  padding: 0.75em 1em;
+  padding: 0.65em 1em;
 
   width: fit-content;
   max-width: 90%;
