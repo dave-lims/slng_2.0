@@ -24,12 +24,14 @@
   <body>
     <nav class="sidebar">
       <div class="sidebar__header">
-        <a href="./"><img class="sidebar__logo" src="./img/logo.png" alt="SLNG"></a>
+        <a href="./" class="sidebar__logo"><img src="./img/logo.png" alt="SLNG"></a>
+        <button class="sidebar__xmark" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- TODO: implement dark / light mode -->
         <!-- <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button> -->
       </div>
-
       <hr>
-      
       <div class="sidebar__account">
         <i class="fa-solid fa-user fa-2xl"></i>
         <div class="sidebar__account__text">
@@ -37,9 +39,7 @@
           <p>Your Account</p>
         </div>
       </div>
-
       <hr>
-
       <ul class="sidebar__nav">
         <a href="#">
           <li class="sidebar__nav__item sidebar__nav__chat">
@@ -76,9 +76,13 @@
       </ul>
     </nav>
     
+    <div class="backdrop"></div>
+
     <main>
       <nav class="top-sidebar">
-        <i class="fa-solid fa-bars top-sidebar__hamburger"></i>
+        <button class="top-sidebar__hamburger" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <a href="./"><img class="sidebar__logo" src="./img/logo.png" alt="SLNG"></a>
         <button id="login-btn">Log in</button>
       </nav>

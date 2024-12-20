@@ -17,12 +17,19 @@
 }
 
 .top-sidebar__hamburger {
+  margin-right: 66.8594px;  /* TODO: temporary fix to center the logo */
+
   font-size: 1.25rem;
   color: var(--text-secondary);
-  margin-right: 66.8594px;  /* TODO: temporary fix to center the logo */
+}
+
+.sidebar__xmark {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
 }
 
 .sidebar__logo {
+  /* display: none; */
   height: 1.75em;
   transition: 0.5s ease-out;
 }
@@ -44,19 +51,35 @@
   display: flex;
   flex-direction: column;
 
-  margin: 2svh 1svw;
-  width: min(275px, 30svw);
-
   /* TODO: CONVERT THESE TO VARIABLES */
   background: var(--background-secondary);
-  background: linear-gradient(180deg, var(--background-secondary) 70%, #242424 100%);
+  background: linear-gradient(180deg, var(--background-secondary) 50%, #292929 100%);
   border: 1px solid #2a2a2a;
   border-radius: 24px;
   transition: 0.2s ease-out;
+  transition: left 0.4s ease-in-out;
 }
 
 .sidebar {
+  position: fixed;
+  left: -290px;
+
+  margin: 1rem 1rem;
+  width: min(275px, 70%);
+  height: calc(100% - 2rem);
+  z-index: 999;
+}
+
+.sidebar .sidebar__logo {
   display: none;
+}
+
+.sidebar.active {
+  left: 0px;
+}
+
+.sidebar.active ~ .backdrop {
+  display: block;
 }
 
 .sidebar:hover {
@@ -155,8 +178,9 @@
   /* border: 1px solid white; */
 }
 
+/* TODO: make this so that it changes background color for the selected menu */
 .sidebar__nav a:first-child li {
-  background-color: #161616;
+  background-color: #383838;
 }
 
 .sidebar__nav__item:hover, .sidebar__account:hover {
@@ -171,10 +195,20 @@
 
   .sidebar {
     display: flex;
+    position: relative;
+    left: 0px;
+
+    margin: 2svh 1svw;
+    width: min(275px, 30svw);
+    height: calc(100% - 4svh);
   }
 
-  .sidebar__logo {
-    width: 3.25rem;
-    height: auto;
+  .sidebar__xmark {
+    display: none;
+  }
+
+  .sidebar .sidebar__logo {
+    display: flex;
+    height: 1.6rem;
   }
 }

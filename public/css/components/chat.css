@@ -71,6 +71,7 @@
   width: 100%;
   padding-inline: 1.25em;
   background-color: var(--background-secondary);
+  border: 1px solid #2a2a2a;
 }
 
 .img_input {

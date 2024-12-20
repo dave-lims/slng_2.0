@@ -25,6 +25,22 @@ const state = {
 
 chatInput.focus();  // set cursor to input bar on load
 
+// hamburger sidebar logic for mobile/smaller screens
+const hamburger = document.querySelector(".top-sidebar__hamburger");
+const xmark = document.querySelector(".sidebar__xmark");
+const sidebar = document.querySelector(".sidebar");
+const backdrop = document.querySelector('.backdrop');
+hamburger.addEventListener("click", e => {
+  console.log('test button');
+  sidebar.classList.toggle('active');
+})
+xmark.addEventListener("click", e => {
+  sidebar.classList.remove('active');
+})
+backdrop.addEventListener("click", e => {
+  sidebar.classList.remove('active');
+})
+
 // Function to update button state
 function updateButtonState() {
   chatSubmitBtn.disabled = state.isSubmitting || chatInput.value.trim() === "";
