@@ -2322,7 +2322,6 @@ const xmark = document.querySelector(".sidebar__xmark");
 const sidebar = document.querySelector(".sidebar");
 const backdrop = document.querySelector('.backdrop');
 hamburger.addEventListener("click", e => {
-  console.log('test button');
   sidebar.classList.toggle('active');
 })
 xmark.addEventListener("click", e => {
@@ -2480,4 +2479,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.74554c37.js.map
+//# sourceMappingURL=index.34751254.js.map
