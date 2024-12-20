@@ -164,9 +164,6 @@ function getRandomCatPic() {
   lastCat = currCat;
   
   cat.src = `./img/${currCat}.jpg`;
-  cat.style.maxWidth = '30%';
-  cat.style.borderRadius = '24px';
-  cat.style.margin = '0.5em 0em';
 
   return cat;
 }

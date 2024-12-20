@@ -14,11 +14,11 @@
   --background-primary: #0f0f0f;
   --background-secondary: #1e1e1e;
 
-  --text-primary: #dfdfdf;
+  --text-primary: #ffffff;
   --text-secondary: #999999;
 
   --chat-bubble-user: #1787ff;
-  --chat-bubble-bot: #3a3a3c;
+  --chat-bubble-bot: #2d2d2d;
 
   color: var(--text-primary);
 }
@@ -106,4 +106,4 @@ main {
     font-size: 0.75rem;
   }
 }
-/*# sourceMappingURL=style.1c3e0f0f.css.map*/
+/*# sourceMappingURL=style.82246245.css.map*/
