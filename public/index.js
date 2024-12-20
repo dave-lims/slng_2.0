@@ -31,7 +31,6 @@ const xmark = document.querySelector(".sidebar__xmark");
 const sidebar = document.querySelector(".sidebar");
 const backdrop = document.querySelector('.backdrop');
 hamburger.addEventListener("click", e => {
-  console.log('test button');
   sidebar.classList.toggle('active');
 })
 xmark.addEventListener("click", e => {
