@@ -5,9 +5,9 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.82246245.css">
-    <link rel="stylesheet" href="css/chat.28fef4d6.css">
-    <link rel="stylesheet" href="css/sidebar.7eca969d.css">
+    <link rel="stylesheet" href="css/style.6f456117.css">
+    <link rel="stylesheet" href="css/chat.1114ce8c.css">
+    <link rel="stylesheet" href="css/sidebar.a073f4e2.css">
     <link rel="stylesheet" href="css/welcome.bf67fa2c.css">
     
     <script src="https://kit.fontawesome.com/195fec1869.js" crossorigin="anonymous"></script>
@@ -24,12 +24,14 @@
   <body>
     <nav class="sidebar">
       <div class="sidebar__header">
-        <a href="./"><img class="sidebar__logo" src="img/logo.png" alt="SLNG"></a>
+        <a href="./" class="sidebar__logo"><img src="img/logo.png" alt="SLNG"></a>
+        <button class="sidebar__xmark" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- TODO: implement dark / light mode -->
         <!-- <button><i class="sidebar__display fa-solid fa-moon fa-xl"></i></button> -->
       </div>
-
       <hr>
-      
       <div class="sidebar__account">
         <i class="fa-solid fa-user fa-2xl"></i>
         <div class="sidebar__account__text">
@@ -37,9 +39,7 @@
           <p>Your Account</p>
         </div>
       </div>
-
       <hr>
-
       <ul class="sidebar__nav">
         <a href="#">
           <li class="sidebar__nav__item sidebar__nav__chat">
@@ -76,9 +76,13 @@
       </ul>
     </nav>
     
+    <div class="backdrop"></div>
+
     <main>
       <nav class="top-sidebar">
-        <i class="fa-solid fa-bars top-sidebar__hamburger"></i>
+        <button class="top-sidebar__hamburger" aria-label="Toggle sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <a href="./"><img class="sidebar__logo" src="img/logo.png" alt="SLNG"></a>
         <button id="login-btn">Log in</button>
       </nav>
@@ -116,6 +120,6 @@
         <aside class="credits">SLNG 2.0 made by David Lim. Credits to CS 160 Team 102-7 @ UC Berkeley 2024.</aside>
       </section>
     </main>
-    <script type="module" src="index.dd66ae1a.js"></script>
+    <script type="module" src="index.74554c37.js"></script>
   </body>
 </html>
