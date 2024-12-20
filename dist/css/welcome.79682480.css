@@ -17,7 +17,7 @@
 .welcome__suggestions-box {
   display: flex;
   flex-direction: column;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   gap: 2em;
 }
 
@@ -101,4 +101,4 @@
     font-size: 1rem; /* 16px */
   }
 }
-/*# sourceMappingURL=welcome.bf67fa2c.css.map*/
+/*# sourceMappingURL=welcome.79682480.css.map*/
