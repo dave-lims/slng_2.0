@@ -1,9 +1,10 @@
 .welcome {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
-  margin-top: 20svh;
+  height: 100%;
 
   color: var(--text-primary);
   text-align: center;
@@ -75,17 +76,13 @@
 
 .welcome__suggestion p {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px */
   color: var(--text-secondary);
 }
 
 @media (min-width: 1280px) {
-  .welcome {
-    margin-top: 25svh;
-  }
-  
   .welcome h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem;  /* 40px */
   }
 
   .welcome__subtitle p {
@@ -93,15 +90,15 @@
   }
 
   .welcome__suggestion__title i {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* 18px */
   }
 
   .welcome__suggestion__title h3 {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* 18px */
   }
 
   .welcome__suggestion p {
-    font-size: 1rem;
+    font-size: 1rem; /* 16px */
   }
 }
-/*# sourceMappingURL=welcome.0389f7a9.css.map*/
+/*# sourceMappingURL=welcome.9ad5adf4.css.map*/
