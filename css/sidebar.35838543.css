@@ -60,6 +60,7 @@
   transition: left 0.4s ease-in-out;
 }
 
+/* mobile hamburger transition */
 .sidebar {
   position: fixed;
   left: -290px;
@@ -212,4 +213,4 @@
     height: 1.6rem;
   }
 }
-/*# sourceMappingURL=sidebar.a073f4e2.css.map*/
+/*# sourceMappingURL=sidebar.35838543.css.map*/
