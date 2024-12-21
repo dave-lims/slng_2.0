@@ -1,0 +1,39 @@
+/* Feature Not Available Hover Message */
+.not-available {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  padding: 1.25rem 1.75rem;
+  width: fit-content;
+
+  background-color: var(--background-secondary);
+  background: linear-gradient(var(--background-secondary), #242424);
+  border: 1px solid #595959;
+  border-radius: 28px;
+  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 999;
+}
+
+.not-available .fa-asterisk {
+  font-size: 1.75rem;
+  margin: 0;
+  margin-right: 1.125rem;
+}
+
+.not-available__text h1 {
+  margin: 0;
+  margin-bottom: 0.25rem;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.not-available__text p {
+  margin: 0;
+}
+/*# sourceMappingURL=messages.fbfc2a05.css.map*/

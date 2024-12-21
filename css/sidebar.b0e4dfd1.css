@@ -68,7 +68,7 @@
   margin: 1rem 1rem;
   width: min(275px, 70%);
   height: calc(100% - 2rem);
-  z-index: 999;
+  z-index: 998;
 }
 
 .sidebar .sidebar__logo {
@@ -213,4 +213,4 @@
     height: 1.6rem;
   }
 }
-/*# sourceMappingURL=sidebar.35838543.css.map*/
+/*# sourceMappingURL=sidebar.b0e4dfd1.css.map*/
