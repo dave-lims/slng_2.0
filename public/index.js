@@ -1,4 +1,6 @@
 import readImg from "./js/image-submit.js";
+import attachHoverMessage from "./js/hover-message.js";
+
 const images = {
   cat1: import('./img/cats/1.jpg'),
   cat2: import('./img/cats/2.jpg'),
@@ -24,6 +26,14 @@ const state = {
 };
 
 chatInput.focus();  // set cursor to input bar on load
+
+// Hover events for features not available yet
+attachHoverMessage('.sidebar__account', '.not-available');
+attachHoverMessage('.sidebar__nav__saved', '.not-available');
+attachHoverMessage('.sidebar__nav__history', '.not-available');
+attachHoverMessage('.sidebar__nav__settings', '.not-available');
+attachHoverMessage('.img_input', '.not-available');
+
 
 // hamburger sidebar logic for mobile/smaller screens
 const hamburger = document.querySelector(".top-sidebar__hamburger");

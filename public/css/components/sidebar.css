@@ -68,7 +68,7 @@
   margin: 1rem 1rem;
   width: min(275px, 70%);
   height: calc(100% - 2rem);
-  z-index: 999;
+  z-index: 998;
 }
 
 .sidebar .sidebar__logo {

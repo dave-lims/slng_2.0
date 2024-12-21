@@ -1952,6 +1952,41 @@ module.exports = (worker) => {
 
 /***/ }),
 
+/***/ "./public/js/hover-message.js":
+/*!************************************!*\
+  !*** ./public/js/hover-message.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ attachHoverMessage)
+/* harmony export */ });
+function attachHoverMessage(target, message) {
+
+  const hoverTargets = document.querySelectorAll(target);
+  const hoverMessage = document.querySelector(message);
+
+  for (target of hoverTargets) {
+    target.addEventListener('mousemove', (e) => {
+      console.log('HOVER');
+      hoverMessage.style.visibility = 'visible';
+      hoverMessage.style.opacity = 1;
+      hoverMessage.style.left = `${e.pageX + 20}px`;
+      hoverMessage.style.top = `${e.pageY - 35}px`;
+    });
+
+    target.addEventListener('mouseleave', () => {
+      console.log('LEAVE');
+      hoverMessage.style.visibility = 'hidden';
+      hoverMessage.style.opacity = '0';
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./public/js/image-submit.js":
 /*!***********************************!*\
   !*** ./public/js/image-submit.js ***!
@@ -2289,6 +2324,9 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_image_submit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/image-submit.js */ "./public/js/image-submit.js");
+/* harmony import */ var _js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/hover-message.js */ "./public/js/hover-message.js");
+
+
 
 const images = {
   cat1: __webpack_require__.e(/*! import() */ "public_img_cats_1_jpg").then(__webpack_require__.t.bind(__webpack_require__, /*! ./img/cats/1.jpg */ "./public/img/cats/1.jpg", 17)),
@@ -2315,6 +2353,14 @@ const state = {
 };
 
 chatInput.focus();  // set cursor to input bar on load
+
+// Hover events for features not available yet
+(0,_js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.sidebar__account', '.not-available');
+(0,_js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.sidebar__nav__saved', '.not-available');
+(0,_js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.sidebar__nav__history', '.not-available');
+(0,_js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.sidebar__nav__settings', '.not-available');
+(0,_js_hover_message_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.img_input', '.not-available');
+
 
 // hamburger sidebar logic for mobile/smaller screens
 const hamburger = document.querySelector(".top-sidebar__hamburger");
@@ -2479,4 +2525,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.34751254.js.map
+//# sourceMappingURL=index.8c140385.js.map
