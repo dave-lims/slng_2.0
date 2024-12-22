@@ -72,6 +72,8 @@
   padding-inline: 1.25em;
   background-color: var(--background-secondary);
   border: 1px solid #2a2a2a;
+
+  cursor: text;
 }
 
 .img_input {
@@ -164,4 +166,4 @@
     max-width: 30%;
   }
 }
-/*# sourceMappingURL=chat.59693d5e.css.map*/
+/*# sourceMappingURL=chat.07436c3b.css.map*/
