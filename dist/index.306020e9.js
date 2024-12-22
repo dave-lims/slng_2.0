@@ -2386,6 +2386,11 @@ imgSubmit.addEventListener("input", e => {
   (0,_js_image_submit_js__WEBPACK_IMPORTED_MODULE_0__["default"])(e.target.files[0]);
 })
 
+// Expand the area for input focus to the whole chat box
+chatForm.addEventListener("click", e => {
+  chatInput.focus();
+})
+
 // Adjust chat height based on input length
 chatInput.addEventListener("input", adjustChatHeight);
 
@@ -2525,4 +2530,4 @@ function getRandomCatPic() {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.8c140385.js.map
+//# sourceMappingURL=index.306020e9.js.map

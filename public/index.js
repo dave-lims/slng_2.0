@@ -59,6 +59,11 @@ imgSubmit.addEventListener("input", e => {
   readImg(e.target.files[0]);
 })
 
+// Expand the area for input focus to the whole chat box
+chatForm.addEventListener("click", e => {
+  chatInput.focus();
+})
+
 // Adjust chat height based on input length
 chatInput.addEventListener("input", adjustChatHeight);
 
