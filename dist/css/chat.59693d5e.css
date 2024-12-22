@@ -142,6 +142,11 @@
   background-repeat: no-repeat;
 }
 
+/* TODO: get rid of this after the feature has been implemented */
+.img_input {
+  cursor: default;
+}
+
 @media (min-width: 1280px) {
   .chat {
     height: 100%;
@@ -159,4 +164,4 @@
     max-width: 30%;
   }
 }
-/*# sourceMappingURL=chat.1114ce8c.css.map*/
+/*# sourceMappingURL=chat.59693d5e.css.map*/

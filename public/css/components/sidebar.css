@@ -189,6 +189,11 @@
   border: 1px solid #333333;
 }
 
+/* TODO: get rid of this after the feature has been implemented */
+.sidebar__nav a {
+  cursor: default;
+}
+
 @media (min-width: 1280px) {
   .top-sidebar {
     display: none;
